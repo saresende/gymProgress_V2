@@ -32,7 +32,9 @@ app.use(function(req, res, next) {
    next();
 });
  
-// Models
+
+
+    // Models
 var UserProgress = mongoose.model('userProgress', {
     date: {type: Date, 
             required: true,
@@ -40,8 +42,7 @@ var UserProgress = mongoose.model('userProgress', {
     photoUrl: {type: String, required: true, unique: true},
     weight: {type: Number, required: true, min: 1}
 });
- 
-// Routes
+    // Routes
  
     // Get reviews
     app.get('/api/progress', function(req, res) {
@@ -93,7 +94,9 @@ var UserProgress = mongoose.model('userProgress', {
         });
     });
  
+
+ 
  
 // listen (start app with node server.js) ======================================
-app.listen(8080);
+app.listen(process.env.PORT || 8080);
 console.log("App listening on port 8080");
