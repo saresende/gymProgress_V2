@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');    // pull information from HTML POST (
 var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
 var cors = require('cors');
 var moment = require('moment');
+require('mongoose-moment')(mongoose);
 
 var databaseConfig = require('./config/database');
 var router = require('./app/routes')
